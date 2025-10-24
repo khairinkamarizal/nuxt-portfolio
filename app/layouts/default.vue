@@ -6,7 +6,7 @@ useHead({
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+  <div class="min-h-screen flex flex-col dark:bg-black">
     <Header />
 
     <main class="flex-1">

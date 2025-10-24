@@ -1,24 +1,49 @@
 <template>
-  <header class="border-b bg-white/70 backdrop-blur">
-    <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+  <header class="dark:bg-black fixed top-0 w-screen">
+    <div class="mx-auto px-16 py-8 grid grid-cols-6">
       <NuxtLink
         to="/"
         class="font-bold"
-        ><UiAppLogo color="#000"
+        ><AppLogo
+          class="dark:text-white transition-all hover:rotate-10"
+          size="36"
       /></NuxtLink>
-
-      <nav class="flex gap-6 text-sm">
+      <DateLocation class="col-span-2" />
+      <div></div>
+      <nav
+        class="flex gap-4 items-center justify-end font-medium tracking-tight dark:text-white">
         <NuxtLink
           to="/"
-          class="hover:opacity-80"
-          >Home</NuxtLink
-        >
+          class="nav-link"
+          active-class="text-blue-500 after:scale-x-100"
+          exact>
+          Home
+        </NuxtLink>
+
+        <NuxtLink
+          to="/work"
+          class="nav-link"
+          active-class="text-blue-500 after:scale-x-100">
+          Work
+        </NuxtLink>
+
         <NuxtLink
           to="/about"
-          class="hover:opacity-80"
-          >About</NuxtLink
-        >
+          class="nav-link"
+          active-class="text-blue-500 after:scale-x-100">
+          About
+        </NuxtLink>
+
+        <NuxtLink
+          to="/contact"
+          class="nav-link"
+          active-class="text-blue-500 after:scale-x-100">
+          Contact
+        </NuxtLink>
       </nav>
+      <div class="items-center flex justify-end">
+        <ThemeToggle />
+      </div>
     </div>
   </header>
 </template>

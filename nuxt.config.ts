@@ -4,7 +4,13 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "@nuxt/image", "@nuxt/fonts"],
+  modules: [
+    "@nuxt/ui",
+    "@nuxt/image",
+    "@nuxt/fonts",
+    "shadcn-nuxt",
+    "@nuxtjs/color-mode",
+  ],
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
@@ -12,6 +18,20 @@ export default defineNuxtConfig({
 
   components: {
     dirs: ["~/components", { path: "~/app/components", pathPrefix: false }],
+  },
+
+  shadcn: {
+    prefix: "",
+    componentDir: "~/components/ui",
+  },
+
+  colorMode: {
+    preference: "light",
+    fallback: "light",
+    classPrefix: "",
+    classSuffix: "",
+    storage: "localStorage",
+    storageKey: "nuxt-color-mode",
   },
 
   app: {
@@ -43,7 +63,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
         },
       ],
     },
